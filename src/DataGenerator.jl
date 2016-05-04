@@ -2,6 +2,8 @@ module DataGenerator
 
 import Distributions; D = Distributions
 
+export linregdata, logregdata, poissonregdata
+
 defaultβ(p) = collect(linspace(-1, 1, p))
 
 function linregdata(n, p; β = defaultβ(p), V = eye(p), μ = zeros(p), σ = 1.0)
