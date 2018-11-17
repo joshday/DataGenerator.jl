@@ -4,7 +4,7 @@ import Distributions; D = Distributions
 
 export linregdata, logregdata, poissonregdata
 
-defaultβ(p) = collect(linspace(-1, 1, p))
+defaultβ(p) = collect(range(-1, stop=1, length=p))
 
 function linregdata(n, p; β = defaultβ(p), V = eye(p), μ = zeros(p), σ = 1.0)
 	x = rand(D.MvNormal(μ, V), n)'
