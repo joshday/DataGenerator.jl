@@ -1,8 +1,11 @@
 module DataGenerator
 
 import Distributions; D = Distributions
+using LinearAlgebra
 
 export linregdata, logregdata, poissonregdata
+
+eye(p) = Matrix(1.0 * I, p, p)
 
 defaultβ(p) = collect(range(-1, stop=1, length=p))
 
