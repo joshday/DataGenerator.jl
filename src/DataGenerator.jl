@@ -19,7 +19,7 @@ function logregdata(n, p, sgn = true; β = defaultβ(p), V = eye(p), μ = zeros(
 	x = rand(D.MvNormal(μ, V), n)'
 	y = Float64[rand(D.Bernoulli(1 / (1 + exp(-η)))) for η in x * β]
 	if sgn
-		y = 2y - 1
+		y = 2y .- 1
 	end
 	return x, y, β
 end
